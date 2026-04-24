@@ -51,8 +51,6 @@ function colorizeHex(elements) {
 
 const rootObserver = new MutationObserver((records) => {
   if (!enabled) return;
-  const thread = document.getElementById("thread");
-  if (!thread) return;
 
   const newCodes = [];
   for (const record of records) {
