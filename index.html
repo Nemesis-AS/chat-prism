@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>GPT Tools</title>
+    <style>
+      *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        width: 260px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #1a1a1a;
+        color: #e8e8e8;
+      }
+
+      header {
+        padding: 14px 16px 12px;
+        border-bottom: 1px solid #2e2e2e;
+      }
+
+      header h1 {
+        font-size: 0.85rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: #a0a0a0;
+      }
+
+      .features {
+        padding: 6px 0;
+      }
+
+      .feature-row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 16px;
+        transition: background 0.15s;
+      }
+
+      .feature-row:hover {
+        background: #222;
+      }
+
+      .feature-info {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .feature-name {
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: #e8e8e8;
+      }
+
+      .feature-desc {
+        font-size: 0.72rem;
+        color: #666;
+        margin-top: 2px;
+      }
+
+      /* Toggle switch */
+      .toggle {
+        position: relative;
+        flex-shrink: 0;
+        width: 36px;
+        height: 20px;
+      }
+
+      .toggle input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+        position: absolute;
+      }
+
+      .toggle-track {
+        position: absolute;
+        inset: 0;
+        border-radius: 20px;
+        background: #3a3a3a;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+
+      .toggle-track::after {
+        content: "";
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #888;
+        transition: transform 0.2s, background 0.2s;
+      }
+
+      .toggle input:checked + .toggle-track {
+        background: #10a37f;
+      }
+
+      .toggle input:checked + .toggle-track::after {
+        transform: translateX(16px);
+        background: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>GPT Tools</h1>
+    </header>
+
+    <div class="features">
+      <div class="feature-row">
+        <div class="feature-info">
+          <div class="feature-name">Color Swatches</div>
+          <div class="feature-desc">Preview &amp; copy hex colors in code blocks</div>
+        </div>
+        <label class="toggle">
+          <input type="checkbox" id="toggle-color-swatches" />
+          <span class="toggle-track"></span>
+        </label>
+      </div>
+    </div>
+
+    <script src="scripts/popup.js"></script>
+  </body>
+</html>

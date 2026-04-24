@@ -1,0 +1,43 @@
+.hex-color {
+  cursor: pointer;
+  position: relative;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: .75rem;
+    aspect-ratio: 1;
+    margin-right: 0.25rem;
+    margin-bottom: -0.1rem;
+    border-radius: .25rem;
+    background-color: var(--hex-color);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+}
+
+.hex-tooltip {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  font-size: 0.7rem;
+  white-space: nowrap;
+  pointer-events: none;
+  animation: hex-tooltip-fade 1.2s ease forwards;
+}
+
+@keyframes hex-tooltip-fade {
+  0%   { opacity: 1; translate: 0 0; }
+  70%  { opacity: 1; translate: 0 0; }
+  100% { opacity: 0; translate: 0 -4px; }
+}
+
+.gpt-tools-swatches-off .hex-color {
+  cursor: default;
+
+  &::before { display: none; }
+}
