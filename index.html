@@ -107,6 +107,44 @@
         transform: translateX(16px);
         background: #fff;
       }
+
+      /* Export button */
+      .actions {
+        padding: 8px 16px 12px;
+        border-top: 1px solid #2e2e2e;
+      }
+
+      .btn-export {
+        width: 100%;
+        padding: 7px 12px;
+        border: 1px solid #3a3a3a;
+        border-radius: 6px;
+        background: #242424;
+        color: #c8c8c8;
+        font-size: 0.8rem;
+        font-family: inherit;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        transition: background 0.15s, color 0.15s, border-color 0.15s;
+      }
+
+      .btn-export:hover {
+        background: #2e2e2e;
+        color: #e8e8e8;
+        border-color: #484848;
+      }
+
+      .btn-export:active {
+        background: #1a1a1a;
+      }
+
+      .btn-export.error {
+        color: #e05c5c;
+        border-color: #5c2a2a;
+      }
     </style>
   </head>
   <body>
@@ -125,6 +163,17 @@
           <span class="toggle-track"></span>
         </label>
       </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn-export" id="btn-export">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        Export Chat
+      </button>
     </div>
 
     <script src="scripts/popup.js"></script>

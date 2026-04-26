@@ -6,11 +6,11 @@
   "action": {
     "default_popup": "index.html"
   },
-  "permissions": ["clipboardWrite", "storage"],
+  "permissions": ["clipboardWrite", "storage", "activeTab"],
   "content_scripts": [
     {
       "css": ["styles/colorizer.css"],
-      "js": ["scripts/colorizer.js"],
+      "js": ["scripts/colorizer.js", "scripts/exporter.js"],
       "matches": [
         "https://chatgpt.com/*",
         "https://claude.ai/*",
